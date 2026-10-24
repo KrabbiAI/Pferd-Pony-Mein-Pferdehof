@@ -74,9 +74,20 @@ Abbild-Datei (`.bin` und `.cue`, oder als `.7z`- oder `.zip`-Paket, oder als `.i
 ### Schritt 3: Starten
 
 1. Doppelklicke im Programmordner auf **`MeinPferdehof.exe`**.
-2. Es öffnet sich ein Fenster mit der Frage **„Wo sind deine Spieldateien?"**.
-3. Klicke auf **„Datei auswählen"** und wähle die Datei aus Schritt 2 aus. Es ist egal, ob das ein Paket (`.7z`,
-   `.zip`), ein CD-Abbild (`.cue`, `.bin`, `.iso`) oder ein fertiger Ordner ist.
+2. Beim allerersten Start begrüßt dich dieses Fenster. Klicke auf **„Datei wählen…"** und wähle die Datei aus
+   Schritt 2 aus. Es ist egal, ob das ein Paket (`.7z`, `.zip`), ein CD-Abbild (`.cue`, `.bin`, `.iso`), ein fertiger
+   Ordner oder dein CD-Laufwerk ist. Dann auf **„Los geht's"**.
+
+<p align="center">
+  <img src="docs/screenshots/launcher-1-datei-waehlen.png" width="520" alt="Einrichtungsfenster: Datei wählen">
+</p>
+
+3. Jetzt bereitet das Programm alles allein vor. Du musst nichts tun.
+
+<p align="center">
+  <img src="docs/screenshots/launcher-2-vorbereiten.png" width="520" alt="Einrichtungsfenster: Fortschritt beim Vorbereiten">
+</p>
+
 4. Warte, bis **„Fertig!"** dasteht. Das dauert ein paar Minuten, danach startet das Spiel von allein.
 
 Beim nächsten Mal startest du nur noch `MeinPferdehof.exe`. Das Auswählen musst du nur einmal machen.
