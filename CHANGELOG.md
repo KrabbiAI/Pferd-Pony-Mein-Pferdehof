@@ -2,6 +2,59 @@
 
 Alle nennenswerten Änderungen an diesem Projekt. Neueste Version zuerst.
 
+## [v0.1.2] – 25.10.2026
+
+Eine zweite Prüfrunde gegen das Original, diesmal auf Bereiche, die bisher Lücken hatten:
+Laufzeitverhalten statt Standbilder, Ton statt nur „der Mischer öffnet", und erstmals der
+Maschinencode der Erweiterungen statt nur ihrer beobachteten Nutzung. **20 weitere Fehler behoben**,
+die Testsuite ist auf 393 Tests gewachsen.
+
+Bemerkenswert: Die drei schwerwiegendsten Funde — stehende Animationen, tote Zufallsmusik und
+falsche Symbole — fallen beim Spielen sofort auf, wurden aber von über 300 automatischen Tests
+nicht bemerkt. Tests prüften Zustände, nicht den Verlauf über die Zeit.
+
+### Behoben
+- **Drei Bildschirme zeigten falsche Bilder.** Weist die Spiellogik einem Bildelement ein neues Bild
+  zu und wechselt danach die Szene, so behält das Original diese Zuweisung bei — unsere Umsetzung
+  verwarf sie. Betroffen waren die Werkzeugleiste in der Stadt (ein Symbol erschien viermal statt
+  Händler, Ausrüstung, Züchter, Tierärztin, Schmied und Arena), die Stallbox (zeigte immer die
+  vierte Ausbaustufe) und die Hofkarte (zeigte Platzhalter statt der stufenabhängigen Gebäude).
+- **Alle Animationen standen still.** Die 62 Film-Loops zeigten dauerhaft ihr erstes Bild, weil die
+  Bildnummer im Loop aus dem Ablauf abgeleitet wurde — das Spiel parkt aber überall auf einem Bild
+  und schleift dort. Betroffen waren unter anderem die 24 Animationen im Stall, die Ladeanimation
+  und das Flugzeug über der Hofkarte.
+- **Der Abspann lief dreimal zu lang** und sprang am Ende an den Anfang: Die Sprünge zum nächsten
+  Abschnitt gingen um ein Bild weiter statt zur nächsten Marke.
+- **Die Zufallsmusik war faktisch tot.** Die Hintergrundmusik lief als Dauerschleife, dadurch wurde
+  der Tonkanal nie frei. Genau daran hängt im Original aber das Verhalten, das das nächste Stück
+  zieht — es feuerte nie, und es lief immer dasselbe Stück endlos.
+- **Der Hinweiston für neue Nachrichten ging immer verloren**, weil das Einreihen eines Tons ihn
+  bei belegtem Kanal verwarf.
+- **Die Balance zwischen links und rechts** nutzte einen dreimal zu großen Wertebereich.
+- **Eine laufende Lautstärke-Überblendung wurde vom Abspielen gelöscht.**
+- Zwei Director-Eigenschaften für Stummschaltung und Gesamtlautstärke waren wirkungslos.
+- **Die Zeitanzeige des Reit-Minispiels hatte ein Stundenfeld zu viel.** Das Original rechnet die
+  Stunden aus und verwirft sie wieder: aus 3725 Sekunden wird „02:05.0", nicht „01:02:05".
+- **Zehn Abweichungen in den Spielerweiterungen**, gefunden durch Dekompilierung ihres
+  Maschinencodes: Verzeichnisabfrage, Vergabe freier Dateinamen, Verschlüsselung der Spielstände,
+  Rückgabe der Reitergebnisse, Löschen von Dateien, acht Funktionen mit falschem Rückgabewert und
+  die Bildschirmabfrage. Die beiden bisher nur angenommenen Verschlüsselungskonstanten sind damit
+  nachgewiesen.
+
+### Geändert
+- **Der Turniersieg im Abschlusstest wird nicht mehr durchgängig erzwungen.** Mit einem voll
+  austrainierten Pferd und einem Reiter, der zwischen Galopp und Kanter wechselt, werden die
+  Turniere der Klassen L und M jetzt wirklich erritten; der Test prüft, dass die gerittene Zeit
+  unter der Siegerzeit liegt. Nur beim Championat bleibt die Nachhilfe, weil der Skript-Reiter
+  dort vier Sprünge verpatzt — seine Ungeschicklichkeit, nicht die Physik.
+- Neue Tests ohne Ausnahmeliste für: Schmied und Arzt auf den Hof rufen, Stall-Apotheke und
+  Medikamente, Zufallsereignisse, drei Spieler nebeneinander, schwarzes Fohlen über Speichern
+  und Laden.
+- Der Stammbaum-Fehler ist unabhängig als Fehler des Originals bestätigt.
+- **Offene Fragen aus der ersten Runde beantwortet:** der genaue Pfad des Datenordners, das
+  Dateiformat der Spielstände, die Rückgabewerte der Atom-Funktionen und wie das Spiel seine
+  Objekte erzeugt. Eine Schleife im Original stellte sich dabei als toter Code heraus.
+
 ## [v0.1.1] – 25.10.2026
 
 Eine Prüfrunde gegen das Original: vier unabhängige Durchsichten haben den Code mit dem

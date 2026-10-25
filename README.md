@@ -47,7 +47,7 @@ Es wird nicht emuliert. Ein eigener Player liest die Originaldateien und führt 
 - Das Reit-Minispiel mit 15 Levels, Gangarten, Sprüngen, Ausdauer und Weggabelungen, portiert aus dem Original-Code
 - Läuft als Fenster oder im Vollbild (F11), skalierbar, in 800×600 mit flüssigen 30 Bildern pro Sekunde
 - Keine Python-Installation und keine DirectX-Runtime nötig
-- Über 300 automatische Tests, dazu ein Langzeitlauf über 1200 Spieltage
+- Fast 400 automatische Tests, dazu ein Langzeitlauf über 1200 Spieltage
 
 ## So kommst du zum Spiel (Schritt für Schritt)
 
