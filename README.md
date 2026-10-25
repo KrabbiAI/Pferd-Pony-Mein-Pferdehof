@@ -65,12 +65,13 @@ Du brauchst nur zwei Dinge: **das Programm** und **die Spieldateien**. Beides da
 Das Spiel selbst ist nicht im Programm enthalten. Du brauchst die Dateien deiner **eigenen Spiele-CD** als
 Abbild-Datei (`.bin` und `.cue`, oder als `.7z`- oder `.zip`-Paket, oder als `.iso`).
 
-- Hast du die CD selbst? Lege sie ein. Das Programm kann direkt vom CD-Laufwerk lesen.
-- Hast du eine Abbild-Datei? Speichere sie irgendwo, zum Beispiel auf dem Desktop.
-- Download der Spieldateien: https://archive.org/details/mein-pferdehof
+Das Projekt stellt keine Original-Spieldateien bereit und bietet auch keinen direkten Downloads davon an.
 
-<!-- TODO für den Repo-Besitzer: Den Link (z. B. archive.org) oben in beide Klammern einsetzen.
-     Die Verantwortung für den verlinkten Inhalt liegt beim Repo-Besitzer. -->
+Wenn du die Original-CD besitzt, kannst du die Spieldateien direkt von deinem CD-Laufwerk einlesen. Alternativ kannst du ein rechtmäßig erstelltes CD-Abbild verwenden.
+Bitte beachte die geltenden Urheberrechtsbestimmungen.
+
+https://archive.org/details/mein-pferdehof
+
 
 ### Schritt 3: Starten
 
