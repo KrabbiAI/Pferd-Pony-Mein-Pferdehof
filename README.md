@@ -67,7 +67,7 @@ Abbild-Datei (`.bin` und `.cue`, oder als `.7z`- oder `.zip`-Paket, oder als `.i
 
 - Hast du die CD selbst? Lege sie ein. Das Programm kann direkt vom CD-Laufwerk lesen.
 - Hast du eine Abbild-Datei? Speichere sie irgendwo, zum Beispiel auf dem Desktop.
-- Download der Spieldateien: **[HIER DEN DOWNLOAD-LINK DER SPIELDATEIEN EINFÜGEN]**
+- Download der Spieldateien: https://archive.org/details/mein-pferdehof
 
 <!-- TODO für den Repo-Besitzer: Den Link (z. B. archive.org) oben in beide Klammern einsetzen.
      Die Verantwortung für den verlinkten Inhalt liegt beim Repo-Besitzer. -->
