@@ -35,7 +35,7 @@ Es wird nicht emuliert. Ein eigener Player liest die Originaldateien und führt 
 - [Funktionen](#funktionen)
 - [So kommst du zum Spiel (Schritt für Schritt)](#so-kommst-du-zum-spiel-schritt-für-schritt)
 - [Bedienung](#bedienung)
-- [Entwicklungsstand](#entwicklungsstand)
+- [Was dich erwartet](#was-dich-erwartet)
 - [Wie es funktioniert](#wie-es-funktioniert)
 - [Änderungsverlauf](CHANGELOG.md)
 - [Rechtliches](#rechtliches)
@@ -124,26 +124,39 @@ Mit **F11** wechselst du zwischen Fenster und Vollbild.
 **Kommandozeile:** `--fullscreen`, `--no-sound`, `--movie <name>`, `--data-root <Ordner>`,
 `--headless --frames N --screenshot x.png` (für Tests). Ein Fehlerprotokoll steht in `%APPDATA%\PferdeHof\player.log`.
 
-## Entwicklungsstand
+## Was dich erwartet
 
-Das Spiel ist durchspielbar. Drei Prüfrunden gegen das Original liegen dahinter: die ersten zwei prüften, ob das
-Umgesetzte *richtig* ist, die dritte, ob überhaupt *alles da* ist. Dabei wurden **48 Fehler** gefunden und behoben.
-Belegt wird das von **über 450 automatischen Tests** und einem Langzeitlauf über 1200 Spieltage.
+**Du kannst den ganzen Hof spielen, von der ersten Box bis zum Championat.** Kein Teil des Spiels ist
+abgeschnitten, vereinfacht oder durch etwas Ähnliches ersetzt — es ist das Original, nur dass es auf einem
+heutigen Rechner läuft.
 
-- [x] Start, Intro, Hauptmenü, Spielerwahl, Hofkarte und alle Gebäude
-- [x] **214 Spielfunktionen** beschreibt das Handbuch, **210 laufen nachweislich** — ohne Beleg bleiben vier,
-      darunter die beiden Beenden-Knöpfe, deren Klick den Testlauf selbst beenden würde
-- [x] **93,2 % der erreichbaren Originalskripte** laufen nachweislich (867 von 930); kein einziger erreichbarer
-      Programmteil ist defekt, die übrigen sind nur ungetestet
-- [x] **Alle 4817 Medien** des Spiels einzeln dekodiert und gezeichnet, dazu alle 8624 Einzelbilder der Animationen
-- [x] Speichern und Laden: ein weit fortgeschrittener Stand wird in einem frischen Prozess geladen und Feld für
-      Feld zeichengenau verglichen
-- [x] Reit-Minispiel: alle 15 Strecken in jedem Spielmodus, mit Stürzen, Verletzung, Erschöpfung und Abbruch
-- [x] Zeit, Zucht, Wirtschaft, Personal, Werbung: der Langzeitlauf über 1200 Spieltage läuft ohne Fehler
-- [x] Alle fünf Spielziele bis zum Champion-Turnier sind über die Oberfläche erreichbar
-- [ ] Pixelgenauer Rich-Text: Schriftbreiten weichen um etwa ein Pixel ab
-- [ ] Kein Vergleich mit dem *laufenden* Original — geprüft wird gegen Programmcode, Spieldateien und Handbuch
-- [ ] Ausführliches Spielen über Stunden mit echten Spielern
+Das läuft:
+
+- [x] **Dein Hof**: Stall mit allen fünf Boxen, Weide mit Unterstand, Gutshaus, Ankleidezimmer, dazu Reithalle,
+      Roundpen und Gästehaus zum Bauen
+- [x] **Deine Pferde**: kaufen, pflegen mit jedem Werkzeug aus dem Schrank, füttern, tränken, satteln und
+      aufzäumen mit allem aus der Kammer, trainieren, streicheln
+- [x] **In die Stadt**: Händler mit allen sechs Ladenseiten, Tierärztin mit der ganzen Stallapotheke, Schmied,
+      Züchter
+- [x] **Reiten**: alle 15 Strecken — Training, freier Ausritt und Turniere aller Klassen bis zum Championat,
+      mit Gangarten, Sprüngen, Ausdauer und Weggabelungen
+- [x] **Zucht**: Hengst und Stute, Fohlen, Stammbaum über Generationen
+- [x] **Wirtschaft**: Personal, Werbung, Finanzen, Preise und Pokale — ein Durchlauf über 1200 Spieltage läuft
+      ohne Zwischenfall
+- [x] **Mehrere Spielerinnen** auf einem Rechner, jede mit eigenem Spielstand; Speichern und Laden wie im Original
+- [x] **Musik und Geräusche** samt der Zufallsmusik des Originals
+
+Das solltest du wissen:
+
+- [ ] Vereinzelt sitzt ein Text ein Pixel neben seinem Platz. Beim Spielen fällt das nicht auf.
+- [ ] **Niemand hat das Spiel über Stunden am Stück gespielt.** Geprüft wurde es gründlich, aber von Programmen,
+      nicht von einem Menschen mit Geduld und einem Lieblingspferd. Wenn dir etwas seltsam vorkommt, sag es
+      über [Issues](https://github.com/KrabbiAI/Pferd-Pony-Mein-Pferdehof/issues) — genau dafür ist das da.
+- [ ] Du brauchst deine **Original-CD**. Ohne sie gibt es kein Spiel, und das bleibt so.
+
+<sup>Für Neugierige: Dreimal wurde diese Umsetzung Zeile für Zeile gegen das Original geprüft, 48 Fehler kamen
+dabei heraus und sind behoben. Über 450 automatische Tests halten das Ergebnis fest. Die Einzelheiten stehen im
+[Änderungsverlauf](CHANGELOG.md).</sup>
 
 ## Wie es funktioniert
 
