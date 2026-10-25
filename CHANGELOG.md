@@ -2,6 +2,60 @@
 
 Alle nennenswerten Änderungen an diesem Projekt. Neueste Version zuerst.
 
+## [v0.1.3] – 25.10.2026
+
+Eine dritte Prüfrunde, diesmal auf **Vollständigkeit** statt Richtigkeit: Ist überhaupt alles da,
+was das Original kann? Dafür wurde das Handbuch Funktion für Funktion abgearbeitet, gemessen welche
+Originalskripte beim Testen je ausgeführt werden, jedes einzelne Medium durchgerechnet und das
+Speichern und Laden auf Herz und Nieren geprüft.
+
+**Zwei Zahlen fassen das Ergebnis zusammen:**
+- Das Handbuch beschreibt **214 Spielfunktionen; 210 laufen nachweislich** (98,1 %). Ohne Beleg
+  bleiben vier, darunter die beiden Beenden-Knöpfe, deren Klick den Testlauf selbst beenden würde.
+- Von den **930 erreichbaren Programmteilen** des Originals laufen **867 nachweislich** (93,2 %).
+  Kein einziger erreichbarer Programmteil ist defekt — die übrigen sind nur ungetestet.
+
+### Behoben
+- **Pferde ließen sich gar nicht pflegen.** Fell, Mähne und Hufe — zwei ganze Handbuchkapitel und
+  der Kern des Spiels — waren über die Oberfläche unerreichbar. Die Pflegehand, die dem Mauszeiger
+  folgt, fing jeden Klick ab, obwohl sie ihn gar nicht verarbeitet; die Bürsten bekamen ihn nie zu
+  sehen. Es stieg lediglich das Vertrauen. Jetzt fängt ein Bildelement einen Klick nur noch dann,
+  wenn seine Skripte ihn auch verarbeiten.
+- **163 Bilder hatten die falsche Transparenz**, darunter alle Menüecken und sämtliche Vögel. Die
+  Alphaebene liegt unkomprimiert vor, wenn sie genau der Ebenengröße entspricht — wir haben blind
+  entpackt. Betroffen waren 259 Bilder, 96 davon zusätzlich mit falscher Länge.
+- **Ein abgebrochener Schreibvorgang konnte den Spielstand zerstören.** Es wurde direkt in die
+  Zieldatei geschrieben; bei vollem Datenträger oder Absturz war der alte Stand weg. Jetzt wird
+  erst in eine Zwischendatei geschrieben und dann umbenannt.
+- **Die Pferdeliste im Pferdeeditor war unsichtbar** und die Zuchtlisten gesperrt: Von vier
+  Größenangaben im Textkopf wurde die falsche als Zeilenhöhe gelesen — 588 Pixel je Zeile.
+- Das Laden stürzte bei unlesbaren Zeichen im Spielstand ab.
+- Zehn Texte standen linksbündig statt zentriert oder rechtsbündig.
+- **Die Rundenanzeige im Reit-Minispiel zeigte eine Runde zu viel**, etwa „6/5" statt „5/5". Das
+  Original schreibt den Text im Ziel ein zweites Mal und setzt dabei beide Zahlen gleich.
+
+### Geprüft
+- **Alle 4817 Medien einzeln** dekodiert und gezeichnet, dazu alle 8624 Einzelbilder der
+  Animationen: kein Absturz, keine leere Dekodierung, keine falsche Größe, kein stummer Ton.
+- **57 Funktionen des Handbuchs waren umgesetzt, aber von keinem Test berührt** — sie haben jetzt
+  einen. Dazu Tests für 71 nie ausgeführte Programmteile des Originals.
+- **Spielstände**: Ein weit fortgeschrittener Stand wird gespeichert, in einem frischen Prozess
+  geladen und Feld für Feld zeichengenau verglichen. Dazu Grenzfälle wie beschädigte Dateien,
+  voller Datenträger, gleichzeitiges Schreiben und Namen mit Umlauten.
+- Ein Test war ein Glücksspiel: Der Zufallsklicker seedete nur sich selbst, nicht den Zufall des
+  Spiels. Jetzt beides.
+- Ein zweiter Test war es ebenfalls: Nach einem harten Ausritt steigt die Krankheitsgefahr des
+  Pferdes — es sei denn, die Auslosung direkt danach trifft das Pferd wirklich, dann wird die
+  Gefahr auf null gesetzt und die Krankheit stattdessen wahr. Der Test erwartete nur den ersten
+  Ausgang und schlug ab und zu fehl; jetzt lässt er beide zu.
+
+### Im Original gefunden
+- **„Pferd ohne Box einstellen" ist kaputt.** Das Original baut dort einen Aufruf mit hängendem
+  Komma zusammen, der sich nicht übersetzen lässt: Der Programmteil stirbt, das Fenster bleibt
+  offen. Der zugehörige Zielhandler ist dadurch toter Code.
+- **812 der 1742 Programmteile sind toter Code**: veraltete Kopien, nie verlinkte Filme wie der
+  Entwickler-Pferdeeditor, Verhaltensweisen ohne Bildelement, Reste der Autorenumgebung.
+
 ## [v0.1.2] – 25.10.2026
 
 Eine zweite Prüfrunde gegen das Original, diesmal auf Bereiche, die bisher Lücken hatten:

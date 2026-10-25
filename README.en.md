@@ -13,8 +13,10 @@ riding mini-game read your original game files and run the original game logic d
 > `MeinPferdehof.exe` opens a wizard that reads your original CD (as a drive, `.cue`/`.bin`, `.iso`, or a `.7z`/`.zip`
 > package of it) and prepares only the needed game files.
 
-Status: work in progress, but extensively tested (250+ automated tests, a 1200-in-game-day soak run, and all five
-in-game goals reached through the UI). See the German [README](README.md) for the full walkthrough, controls and
+Status: playable end to end. Three verification rounds against the original found and fixed 48 bugs; 210 of the
+214 game features described in the manual are demonstrably working, 93.2 % of the original's reachable scripts
+run, and all 4817 media decode cleanly. Backed by 450+ automated tests, a 1200-in-game-day soak run and all five
+in-game goals reached through the UI. See the German [README](README.md) for the full walkthrough, controls and
 screenshots.
 
 *Mein Pferdehof is a game by emme. This is an independent, non-commercial fan project, not affiliated with or endorsed

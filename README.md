@@ -47,7 +47,7 @@ Es wird nicht emuliert. Ein eigener Player liest die Originaldateien und führt 
 - Das Reit-Minispiel mit 15 Levels, Gangarten, Sprüngen, Ausdauer und Weggabelungen, portiert aus dem Original-Code
 - Läuft als Fenster oder im Vollbild (F11), skalierbar, in 800×600 mit flüssigen 30 Bildern pro Sekunde
 - Keine Python-Installation und keine DirectX-Runtime nötig
-- Fast 400 automatische Tests, dazu ein Langzeitlauf über 1200 Spieltage
+- Über 450 automatische Tests, dazu ein Langzeitlauf über 1200 Spieltage
 
 ## So kommst du zum Spiel (Schritt für Schritt)
 
@@ -126,14 +126,23 @@ Mit **F11** wechselst du zwischen Fenster und Vollbild.
 
 ## Entwicklungsstand
 
-Das Projekt ist in Arbeit. Getestet, mit über 250 automatischen Tests und mehreren Durchspiel-Durchläufen:
+Das Spiel ist durchspielbar. Drei Prüfrunden gegen das Original liegen dahinter: die ersten zwei prüften, ob das
+Umgesetzte *richtig* ist, die dritte, ob überhaupt *alles da* ist. Dabei wurden **48 Fehler** gefunden und behoben.
+Belegt wird das von **über 450 automatischen Tests** und einem Langzeitlauf über 1200 Spieltage.
 
 - [x] Start, Intro, Hauptmenü, Spielerwahl, Hofkarte und alle Gebäude
-- [x] Speichern und Laden von Spielständen
-- [x] Reit-Minispiel: alle 15 Level, über die Menüs erreichbar
-- [x] Zeit, Zucht, Wirtschaft, Personal, Werbung: ein Langzeitlauf über 1200 Spieltage lief ohne Fehler
-- [x] Alle fünf Spielziele bis zum Champion-Turnier sind erreichbar
-- [ ] Pixelgenauer Rich-Text und einzelne Optikdetails
+- [x] **214 Spielfunktionen** beschreibt das Handbuch, **210 laufen nachweislich** — ohne Beleg bleiben vier,
+      darunter die beiden Beenden-Knöpfe, deren Klick den Testlauf selbst beenden würde
+- [x] **93,2 % der erreichbaren Originalskripte** laufen nachweislich (867 von 930); kein einziger erreichbarer
+      Programmteil ist defekt, die übrigen sind nur ungetestet
+- [x] **Alle 4817 Medien** des Spiels einzeln dekodiert und gezeichnet, dazu alle 8624 Einzelbilder der Animationen
+- [x] Speichern und Laden: ein weit fortgeschrittener Stand wird in einem frischen Prozess geladen und Feld für
+      Feld zeichengenau verglichen
+- [x] Reit-Minispiel: alle 15 Strecken in jedem Spielmodus, mit Stürzen, Verletzung, Erschöpfung und Abbruch
+- [x] Zeit, Zucht, Wirtschaft, Personal, Werbung: der Langzeitlauf über 1200 Spieltage läuft ohne Fehler
+- [x] Alle fünf Spielziele bis zum Champion-Turnier sind über die Oberfläche erreichbar
+- [ ] Pixelgenauer Rich-Text: Schriftbreiten weichen um etwa ein Pixel ab
+- [ ] Kein Vergleich mit dem *laufenden* Original — geprüft wird gegen Programmcode, Spieldateien und Handbuch
 - [ ] Ausführliches Spielen über Stunden mit echten Spielern
 
 ## Wie es funktioniert
