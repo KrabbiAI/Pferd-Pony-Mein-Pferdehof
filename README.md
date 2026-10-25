@@ -37,6 +37,7 @@ Es wird nicht emuliert. Ein eigener Player liest die Originaldateien und führt 
 - [Bedienung](#bedienung)
 - [Entwicklungsstand](#entwicklungsstand)
 - [Wie es funktioniert](#wie-es-funktioniert)
+- [Änderungsverlauf](CHANGELOG.md)
 - [Rechtliches](#rechtliches)
 
 ## Funktionen
