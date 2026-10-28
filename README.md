@@ -47,7 +47,7 @@ Es wird nicht emuliert. Ein eigener Player liest die Originaldateien und führt 
 - Das Reit-Minispiel mit 15 Levels, Gangarten, Sprüngen, Ausdauer und Weggabelungen, portiert aus dem Original-Code
 - Läuft als Fenster oder im Vollbild (F11), skalierbar, in 800×600 mit flüssigen 30 Bildern pro Sekunde
 - Keine Python-Installation und keine DirectX-Runtime nötig
-- Über 450 automatische Tests, dazu ein Langzeitlauf über 1200 Spieltage
+- Über 470 automatische Tests, dazu ein Langzeitlauf über 1200 Spieltage
 
 ## So kommst du zum Spiel (Schritt für Schritt)
 
@@ -154,9 +154,10 @@ Das solltest du wissen:
       über [Issues](https://github.com/KrabbiAI/Pferd-Pony-Mein-Pferdehof/issues) — genau dafür ist das da.
 - [ ] Du brauchst deine **Original-CD**. Ohne sie gibt es kein Spiel, und das bleibt so.
 
-<sup>Für Neugierige: Dreimal wurde diese Umsetzung Zeile für Zeile gegen das Original geprüft, 48 Fehler kamen
-dabei heraus und sind behoben. Über 450 automatische Tests halten das Ergebnis fest. Die Einzelheiten stehen im
-[Änderungsverlauf](CHANGELOG.md).</sup>
+<sup>Für Neugierige: Viermal wurde diese Umsetzung Zeile für Zeile gegen das Original geprüft, 49 Fehler kamen
+dabei heraus und sind behoben. Über 470 automatische Tests halten das Ergebnis fest, und von den 900
+Programmteilen des Originals, die das Spiel überhaupt erreichen kann, laufen 899 nachweislich. Die
+Einzelheiten stehen im [Änderungsverlauf](CHANGELOG.md).</sup>
 
 ## Wie es funktioniert
 

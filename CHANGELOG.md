@@ -2,6 +2,51 @@
 
 Alle nennenswerten Änderungen an diesem Projekt. Neueste Version zuerst.
 
+## [v0.1.4] – 28.10.2026
+
+Eine vierte Prüfrunde, die genau eine Frage abarbeitet: Steckt hinter den 63 erreichbaren
+Programmteilen des Originals, die noch kein Test berührt hatte, eine echte Lücke? Jeder einzelne
+wurde gegen den Originalcode gelesen und entweder über die Oberfläche angefahren oder am Code als
+unerreichbar belegt.
+
+**Das Ergebnis:** Von den **900 erreichbaren Programmteilen** des Originals laufen **899
+nachweislich** (99,9 %). 34 der 63 haben einen Test bekommen, 28 haben sich als im Original
+unerreichbar erwiesen, einer bleibt offen. Die Bezugsgröße ist um 30 kleiner als vorher, weil ein
+Unerreichbarkeitsbeweis den Programmteil aus dem Nenner nimmt.
+
+### Behoben
+- **Jeder Ausritt lief mit der Hofmusik im Rücken.** `updateStage` führte einen anstehenden
+  Bildsprung nicht aus. Das Spiel braucht das an genau einer Stelle — der einzigen im ganzen Spiel,
+  an der ein Sprung unmittelbar von `updateStage` gefolgt wird: Vor der Übergabe an das
+  Reit-Minispiel stellt das Original den Abspielkopf auf ein Wartebild, dessen Bildskript Musik und
+  Umgebungsgeräusche abschaltet. Dieses Bildskript ist nie gelaufen.
+
+### Geprüft
+- **34 weitere Programmteile des Originals haben einen Test** — und zwar einen, der beweist, dass er
+  sein Ziel erreicht: Ein Mitschnitt vor dem Handleraufruf lässt den Test fehlschlagen, wenn er den
+  Originalteil nicht mehr anfährt. Darunter das Wartebild und die Ritt-Steuerung (nur über den Cheat
+  erreichbar, der nach „idkfa" auf Tabulator und F liegt), der Kartenhintergrund, die grasenden
+  Pferde auf der Koppel, die Bank der Stadt, die Schimmelflecken von Stute und Fohlen in der Box,
+  das Schließen des Pferdebuchs und die Diagnoseliste der Tierärztin.
+- **Ein bestehender Test belegte nur scheinbar etwas:** Der Klick auf den Kartenhintergrund traf
+  immer ein darüberliegendes Gebäude, weil die Klickhilfe nur in der Bildmitte nach undurchsichtigen
+  Punkten sucht.
+- Die 28 unerreichbaren Programmteile wurden zusätzlich von Hand gegen unsere Maschine gelesen und,
+  wo sie keinen eigenen Zustand brauchen, direkt aufgerufen: Keiner benutzt einen Lingo-Befehl, einen
+  Erweiterungsaufruf oder eine Bildelement-Eigenschaft, die wir nicht umsetzen.
+
+### Im Original gefunden
+- **Eine Tippfehler-Leiche im Menüsystem.** Die Schaltflächen-Weiche fragt `#subVerify` ab, die
+  beiden Menüeinträge, die eine Prüfung mitbringen, schreiben aber `#_subVerify`. Der einzige
+  Prüf-Rückruf, den die Hofkarte dem Menüsystem anbietet, läuft nie.
+- **Der Film der Tierärztin verlässt Bild 1 nie.** Die einzige Bildnavigation im ganzen Film ist
+  `go to frame the frame` im Bildskript von Bild 1 — alles, was auf den 647 weiteren Bildern liegt,
+  ist unerreichbar.
+- **Die Pferdeliste im Pferdebuch ist abgeschaltet.** Ihre fünf Knöpfe sind in jedem Bild
+  unsichtbar, weil der einzige Aufrufer die nötige Kennung nicht mitgibt.
+- **Die Tonkanal-Reparatur des Menü-Casts wurde vor der Auslieferung abgeschaltet**: Beide Zeilen,
+  die sie benutzen würden, sind im ausgelieferten Objekt auskommentiert.
+
 ## [v0.1.3] – 25.10.2026
 
 Eine dritte Prüfrunde, diesmal auf **Vollständigkeit** statt Richtigkeit: Ist überhaupt alles da,
