@@ -2,6 +2,32 @@
 
 Alle nennenswerten Änderungen an diesem Projekt. Neueste Version zuerst.
 
+## [v0.1.5] – 28.10.2026
+
+Die ersten beiden Fehler, die beim **wirklichen Spielen** aufgefallen sind. Beide Programmteile liefen in
+der Abdeckungsmessung und standen auf keiner Liste ungeprüfter Pfade — sie verhielten sich nur falsch.
+Abdeckung misst, ob Code *ausgeführt* wird, nicht ob er sich *richtig* verhält.
+
+### Behoben
+- **Das Hinweisfenster „Du hast noch den Reitdress an" ließ sich nicht wegklicken.** Der Klick auf OK
+  wirkte, das Fenster ging nur sofort wieder auf — zwölfmal in zwölf Bildern. Der Schieberegler setzt beim
+  Drücken `Flag` und zeigt die Warnung in *jedem* `exitFrame`, solange sie steht; beendet wird das allein
+  durch das Loslassen. Unser Hinweisfenster schluckte die Ereignisse, die währenddessen eintrafen, auch
+  das Loslassen — das Spiel bekam es nie und zeigte die Warnung im nächsten Bild erneut. Im Original ist
+  das eine eigene, modale Form: solange sie steht, läuft der Film nicht, und danach stellt Director dem
+  Bildelement sein `mouseUp` zu. Genau das tun wir jetzt auch.
+- **Jeder Rollkasten des Spiels war eine Zeile zu kurz.** Die Textbox im Spielerfenster ließ sich um 14 von
+  29 nötigen Pixeln rollen, die letzte Zeile blieb hinter der Unterkante. `GetMaxScroll` nimmt für einen
+  Textdarsteller `charPosToLoc(Darsteller, letztesZeichen)` als Texthöhe; wir gaben den *oberen* Rand der
+  letzten Zeile zurück statt ihren unteren. Den Beleg liefert das Spiel selbst: Im selben Handler steht für
+  ein Feld `textHeight = member.height`, also die volle Höhe — beide Zweige meinen dasselbe. Betroffen waren
+  alle Rollkästen: Apotheke, Händler, Züchter, Spielerfenster.
+
+### Geprüft
+- Zwei neue Tests in `tests/test_played.py`, die beide Fehler nachstellen: Der Regler wird gedrückt
+  *gehalten* und die Warnungen gezählt, der Rollbalken gedrückt gehalten, bis er nicht weiter kann. Ohne
+  die Behebungen schlagen sie fehl (12 Warnungen statt einer; 14 statt 29 Pixel Rollweg).
+
 ## [v0.1.4] – 28.10.2026
 
 Eine vierte Prüfrunde, die genau eine Frage abarbeitet: Steckt hinter den 63 erreichbaren
