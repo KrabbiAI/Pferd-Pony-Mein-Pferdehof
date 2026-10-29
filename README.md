@@ -150,13 +150,14 @@ Das solltest du wissen:
 
 - [ ] Vereinzelt sitzt ein Text ein Pixel neben seinem Platz. Beim Spielen fällt das nicht auf.
 - [ ] **Niemand hat das Spiel über Stunden am Stück gespielt.** Geprüft wurde es gründlich, aber von Programmen,
-      nicht von einem Menschen mit Geduld und einem Lieblingspferd. Die ersten zwei Minuten echtes Spielen haben
-      prompt zwei Fehler gefunden, die 472 automatische Tests übersehen hatten — beide sind behoben. Wenn dir
+      nicht von einem Menschen mit Geduld und einem Lieblingspferd. Die ersten Minuten echtes Spielen haben
+      prompt drei Fehler gefunden, die über 470 automatische Tests übersehen hatten — alle drei sind behoben,
+      und die Suche nach dem dritten hat gleich noch einen vierten ans Licht gebracht. Wenn dir
       etwas seltsam vorkommt, sag es über
       [Issues](https://github.com/KrabbiAI/Pferd-Pony-Mein-Pferdehof/issues) — genau dafür ist das da.
 - [ ] Du brauchst deine **Original-CD**. Ohne sie gibt es kein Spiel, und das bleibt so.
 
-<sup>Für Neugierige: Viermal wurde diese Umsetzung Zeile für Zeile gegen das Original geprüft, 51 Fehler kamen
+<sup>Für Neugierige: Viermal wurde diese Umsetzung Zeile für Zeile gegen das Original geprüft, 53 Fehler kamen
 dabei heraus und sind behoben. Über 470 automatische Tests halten das Ergebnis fest, und von den 900
 Programmteilen des Originals, die das Spiel überhaupt erreichen kann, laufen 899 nachweislich. Die
 Einzelheiten stehen im [Änderungsverlauf](CHANGELOG.md).</sup>

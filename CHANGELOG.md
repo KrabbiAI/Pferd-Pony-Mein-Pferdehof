@@ -2,6 +2,45 @@
 
 Alle nennenswerten Änderungen an diesem Projekt. Neueste Version zuerst.
 
+## [v0.1.6] – 29.10.2026
+
+Zwei Fehler, die beide an derselben Stelle saßen: zwischen „der Zustand stimmt" und „der Spieler sieht
+es". Der Rollkasten aus v0.1.5 war nur halb repariert, und der erste Charakter, den man anlegt, bekam
+nie ein Porträt.
+
+### Behoben
+- **Die Textkästen ließen sich weiterhin nicht rollen.** Den Anfasser konnte man ziehen, `scrollTop`
+  stieg bis zum Anschlag — gezeichnet wurde weiter der Textanfang. Unser Textzeichner berücksichtigte
+  `scrollTop` nur bei Feld- und Schaltflächendarstellern; jeder Rollkasten des Spiels hängt aber an einem
+  Textdarsteller des Text-Xtra (`sprite 101: text "item_info"` im Spielerfenster, `sprite 94` derselben
+  Sorte auf der Landkarte). Betroffen waren damit alle Rollkästen des Spiels, gleich ob über Anfasser,
+  Pfeiltasten, Leiste oder Mausrad gerollt wurde.
+
+- **Der erste angelegte Charakter bekam nie ein Porträt.** In der Ladeliste saß er ohne Foto, und das leere
+  Bild ließ sich auch nicht anklicken (der Name daneben schon). `cropPlayer` schneidet die Figur aus dem Bild,
+  holt sich mit `findEmpty` einen freien Platz der Besetzung „playerFaces" und sichert alles mit
+  `if _m.number > -1` ab. In Director hat ein über seine *Nummer* angesprochener Darsteller immer diese
+  Nummer, ob der Platz belegt ist oder nicht — nur eine Suche über den *Namen*, die nichts findet, antwortet
+  mit −1. Wir antworteten auch für den leeren Platz mit −1, und damit scheiterte die Absicherung genau
+  einmal: beim allerersten Charakter, dessen Platz noch niemand angefasst hatte. Ab dem zweiten hatte
+  `loadPlayerPicto` den Platz bereits benannt.
+
+### Geprüft
+- Ein dritter Test in `tests/test_played.py` misst jetzt **Bildpunkte statt Rollwerte**: Er zieht den
+  Anfasser nach unten und verlangt, dass sich die Bühne auch links des Rollbalkens ändert. Ohne die
+  Behebung ändern sich genau die neun Spalten des Anfassers (218–226) und sonst nichts — der Test schlägt
+  mit „nur der Anfasser bewegt sich, der Text steht still" fehl.
+- `tests/test_savegame.py` legt drei Charaktere in einem frischen Ordner an und verlangt für jeden ein
+  Porträt — Datei und Bildpunkte. Ohne die Behebung fehlt das erste.
+
+### Gelernt
+- Ein Test, der den *Zustand* prüft, belegt nicht, dass etwas am Bildschirm ankommt. Für alles, was der
+  Spieler sehen soll, wird ab jetzt das Bild verglichen.
+- Das Porträt-Problem kam ans Licht, weil ein Test der vierten Runde sprunghaft fehlschlug — etwa jeder
+  achte Lauf. Es wäre bequem gewesen, ihn als „wackelig" abzutun; er hat stattdessen einen echten Fehler
+  angezeigt. Welcher Charakter in der Liste oben steht, entscheidet eine zufällige Kennung, und nur wenn es
+  der erste war, fiel der Test um.
+
 ## [v0.1.5] – 28.10.2026
 
 Die ersten beiden Fehler, die beim **wirklichen Spielen** aufgefallen sind. Beide Programmteile liefen in
